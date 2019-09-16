@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F10F42A4-8756-4F67-966E-A256A28F5458}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project.SGP</RootNamespace>
+    <AssemblyName>Project.SGP</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Framework.Core">
+      <HintPath>..\Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\EpisodioHelper.cs" />
+    <Compile Include="Helpers\GetPath.cs" />
+    <Compile Include="Pages\01 - GROT\Acionamento novas telas\AcionamentoNovasTelasPage.cs" />
+    <Compile Include="Pages\01 - GROT\ConsultaDeLog\ConsultaDeLogPage.cs" />
+    <Compile Include="Pages\01 - GROT\GestaoAlertas\GestaoAlertasPage.cs" />
+    <Compile Include="Pages\01 - GROT\GrupoLocalGravacao\GrupoLocalGravacaoPage.cs" />
+    <Compile Include="Pages\01 - GROT\Indicadores do Produto\IndicadoresProdutoPage.cs" />
+    <Compile Include="Pages\01 - GROT\Indisponibilidade Elenco\IndisponibilidadeElencoPage.cs" />
+    <Compile Include="Pages\01 - GROT\LocalGravacao\LocalGravacaoPage.cs" />
+    <Compile Include="Pages\01 - GROT\Parametros\ParametrosPage.cs" />
+    <Compile Include="Pages\01 - GROT\PersonagemGROT\PersonagemGROTPage.cs" />
+    <Compile Include="Pages\01 - GROT\PlanejamentoRoteiroGROT\PlanejamentoGROTPage.cs" />
+    <Compile Include="Pages\01 - GROT\Relatorios dos Indicadores de Cenas\RelatoriosDeIndicadoresDeCenasPage.cs" />
+    <Compile Include="Pages\01 - GROT\SequeciaCenica\SequeciaCenicaPage.cs" />
+    <Compile Include="Pages\CapitulosCenas\CapitulosCenasPage.cs" />
+    <Compile Include="Pages\CenarioIncompativel\CenarioIncompativelPage.cs" />
+    <Compile Include="Pages\Cenario\CenarioPage.cs" />
+    <Compile Include="Pages\DecupagemArte\DecupagemArtePage.cs" />
+    <Compile Include="Pages\DecupagemBasica\DecupagemBasicaPage.cs" />
+    <Compile Include="Pages\DecupagemContinuidade\DecupagemContinuidadePage.cs" />
+    <Compile Include="Pages\EspelhoGravacao\EspelhoGravacaoPage.cs" />
+    <Compile Include="Pages\Fotos\FotosPage.cs" />
+    <Compile Include="Pages\FrequenciaElenco\FrequenciaElencoPage.cs" />
+    <Compile Include="Pages\Home\HomePage.cs" />
+    <Compile Include="Pages\IndisponibilidadeLocais\IndisponibilidadeLocaisPage.cs" />
+    <Compile Include="Pages\Login\LoginPage.cs" />
+    <Compile Include="Pages\Personagem\PersonagemPage.cs" />
+    <Compile Include="Pages\PlanejamentoRoteiro\PlanejamentoRoteiroPage.cs" />
+    <Compile Include="Pages\Roteiro\RoteiroPage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adendo - Lado a Lado.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\cap_10.fdx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\IMG_6465.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IMG_6466.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IMG_6467.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IMG_6468.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IMG_6469.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IMG_6470.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IMG_6471.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IMG_6472.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IMG_6473.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\IMG_6582.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

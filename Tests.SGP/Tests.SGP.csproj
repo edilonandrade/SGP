@@ -1,0 +1,1235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{570B108E-A1AA-4054-95B4-75D1B310C85B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tests.SGP</RootNamespace>
+    <AssemblyName>Tests.SGP</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <WarningLevel>2</WarningLevel>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Faker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Faker.Data.1.0.7\lib\net45\Faker.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework.IoC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Framework.IoC.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.11.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.0.3.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.0.3\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SpecRun.SpecFlowPlugin, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecRun.SpecFlow.1.5.2\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="TechTalk.SpecFlow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TechTalk.SpecRun, Version=1.5.2.0, Culture=neutral, PublicKeyToken=d0fc5cc18b3b389b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecRun.SpecFlow.1.5.2\lib\net45\TechTalk.SpecRun.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebDriver, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.6.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.6.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Features\GROT\01 - Bloco 01\01.01 - Cenários incompatíveis\01.01 - CenariosIncomp.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.01 - CenariosIncomp.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\01 - Bloco 01\01.02 - CenariosGROT\01.02 - CenariosGrot.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.02 - CenariosGrot.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\01 - Bloco 01\01.03 - DecupagemBasica\01.03 - DecupagemBasicaGROT.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.03 - DecupagemBasicaGROT.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\01 - Bloco 01\01.04 - DecupagemContinu\01.04 - DecupagemContinuidade.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.04 - DecupagemContinuidade.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\01 - Bloco 01\01.07 - IndispElenco\01.07 - IndisponibilidadeElenco.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.07 - IndisponibilidadeElenco.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\01 - Bloco 01\01.08 - IndisponibLocais\01.08 - IndisponibLocais.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.08 - IndisponibLocais.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\01 - Bloco 01\01.09 - LocalGravacao\01.09 - LocalGravacao.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.09 - LocalGravacao.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\01 - Bloco 01\01.10 - Personagem\01.10 - Personagem.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.10 - Personagem.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\01 - Bloco 01\01.11 - SequeciaCenica\01.11 - SequeciaCenica.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.11 - SequeciaCenica.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\02 - Bloco 02\01 - GrupoDeGravacao\02.01 - GrupoDeGravacao.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02.01 - GrupoDeGravacao.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\02 - Bloco 02\02 - Parâmetros\02.02 - Parametros.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02.02 - Parametros.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\01 - Gestão de alertas\01.01 - ListagemDeAlertas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.01 - ListagemDeAlertas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\01 - Gestão de alertas\01.02 - FiltrosDeAlertas1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01.02 - FiltrosDeAlertas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.01 - HistoricoPlanejamento.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.01 - HistoricoPlanejamento.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.03 - CriacaoValidacaoRoteiro.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.03 - CriacaoValidacaoRoteiro.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.04 - VisualizacaoAlertas1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.04 - VisualizacaoAlertas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.05 - DetalhamentoDeAlertas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.05 - DetalhamentoDeAlertas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.07 - OcultarListagemCenas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.07 - OcultarListagemCenas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.08 - RelatorioAlertas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.08 - RelatorioAlertas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.09 - NovosItensDeCena.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.09 - NovosItensDeCena.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.10 - IconeDeInformacoes.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.10 - IconeDeInformacoes.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.11 - AcionamentoNovasTelas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.11 - AcionamentoNovasTelas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.06 - CriaçãoDeNovaFrenteDeGravacao.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.06 - CriaçãoDeNovaFrenteDeGravacao.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.12 - DestaqueNoDiaDaFrente.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.12 - DestaqueNoDiaDaFrente.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.14 - MudancaVisual.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03.14 - MudancaVisual.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\04 - Relatório dos indicadores de cenas\04.02 - AplicarFiltroRelatorioCenas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>04.02 - AplicarFiltroRelatorioCenas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\04 - Relatório dos indicadores de cenas\04.01 - GerarRelatorioIndicadoresDeCenas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>04.01 - GerarRelatorioIndicadoresDeCenas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\05 - Frente de gravação\05.02 - CarregamentoDasFrentesPadrao.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>05.02 - CarregamentoDasFrentesPadrao.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\05 - Frente de gravação\05.01 - CriacaoNovaFrenteGravacao.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>05.01 - CriacaoNovaFrenteGravacao.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\02 - Indicadores do produto\02.01 - IndicadoresProduto.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02.01 - IndicadoresProduto.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\05 - Frente de gravação\05.03 - CarregaDadosParametrizados.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>05.03 - CarregaDadosParametrizados.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\03 - Bloco 03\05 - Frente de gravação\05.04 - AlteracaoExclusaoDeFrente.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>05.04 - AlteracaoExclusaoDeFrente.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GROT\ValidacoesSemGrot.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidacoesSemGrot.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\01-CriarNovoCapitulo1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-CriarNovoCapitulo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\02-CriarCapituloComDecupagem.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02-CriarCapituloComDecupagem.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\03-EditarCapitulo.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03-EditarCapitulo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\04-IncluirAdendo.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>04-IncluirAdendo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\05-ExcluirCenaDoCapitulo.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>05-ExcluirCenaDoCapitulo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\06-CopiarCapitulo.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>06-CopiarCapitulo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\07-MovimentarCena.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>07-MovimentarCena.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\08-ValidarMapaCenas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>08-ValidarMapaCenas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\09-CriacaoNovoCapitulo.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>09-CriacaoNovoCapitulo.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\10-CriacaoNovoCapituloDecupagem.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>10-CriacaoNovoCapituloDecupagem.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\11-CortarCena.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>11-CortarCena.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\12-ValidarImpressao.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>12-ValidarImpressao.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.03 - Decupagem basica\01-CriarDecupagemBasica.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-CriarDecupagemBasica.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.04 - Decupagem arte\01-CriarDecupagemArte.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-CriarDecupagemArte.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.05 - Decupagem continuidade\01-CriarDecupagemContinuidade.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-CriarDecupagemContinuidade.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.06 - Filtros de capitulos\01-ValidarPesquisas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-ValidarPesquisas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\03 - Capítulos e cenas\03.06 - Filtros de capitulos\02-LimparPesquisas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02-LimparPesquisas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\01-CriarNovoCenario.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-CriarNovoCenario.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\02-EditarCenario.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02-EditarCenario.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\03-ExcluirCenario.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03-ExcluirCenario.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\04-CriarMateriaisFixos.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>04-CriarMateriaisFixos.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\04 - Cenários\04.02 - Criação, alteração e exclusão de ambientes do cenário\01-EditarAmbiente.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-EditarAmbiente.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\04 - Cenários\04.02 - Criação, alteração e exclusão de ambientes do cenário\02-ExcluirAmbiente.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02-ExcluirAmbiente.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\04 - Cenários\04.03 - Filtros de cenários\05-FiltrosCenarios.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>05-FiltrosCenarios.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\01-CriarPersonagem.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-CriarPersonagem.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\02-EditarNovoPersonagem.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02-EditarNovoPersonagem.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\03-VisualizarContatoAtor.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03-VisualizarContatoAtor.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\04-CadNovaIndisponibi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>04-CadNovaIndisponibi.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\05-EditarNovaIndisponibi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>05-EditarNovaIndisponibi.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\06-ExcluirPersoIndisponibi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>06-ExcluirPersoIndisponibi.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\07-ReaproveitarPersonagens.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>07-ReaproveitarPersonagens.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\08-CadastrarFichaContinuidade.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>08-CadastrarFichaContinuidade.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\09-ExcluirRoupas.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>09-ExcluirRoupas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\05 - Personagem\05.02 - Validar personagem\01-ValidarPesquisaPersonagem.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-ValidarPesquisaPersonagem.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\01-IncluirNovaImagem.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-IncluirNovaImagem.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\02-AlterarInformacoesImagem.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02-AlterarInformacoesImagem.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\03-ExcluirImagemViaDetalhamento.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03-ExcluirImagemViaDetalhamento.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\04-BaixarImagem.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>04-BaixarImagem.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\05-GerarAlbum.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>05-GerarAlbum.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\06 - Fotos\06.02 - Filtros de imagem\01-ValidarPesquisa.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-ValidarPesquisa.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\06 - Fotos\06.03 - Refinar marcações\01-RefirnarMarcacoes1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-RefirnarMarcacoes.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\07 - Planejamento de roteiro\07.01 - Configurações\01-Configuracoes1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-Configuracoes.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\07 - Planejamento de roteiro\07.01 - Configurações\02-ExcluirGrupoNotificacao1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02-ExcluirGrupoNotificacao.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\07 - Planejamento de roteiro\07.02 - Planejamento\01-CriarPlanejamentoRoteiro1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-CriarPlanejamentoRoteiro.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\07 - Planejamento de roteiro\07.02 - Planejamento\02-CancelarPlanejamento1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02-CancelarPlanejamento.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\07 - Planejamento de roteiro\07.02 - Planejamento\03-MoverRoteiro1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>03-MoverRoteiro.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\07 - Planejamento de roteiro\07.03 - Geração de relatório\01-GeraRelat1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-GeraRelat.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\07 - Planejamento de roteiro\07.04 - Destacar cenas\01-DestacarCenas1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-DestacarCenas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\07 - Planejamento de roteiro\07.05 - Filtros de cenas roteirizáveis\01-FiltroCenas1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-FiltroCenas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\08 - Roteiros\08.01 - Visualizar roteiros\01-VisualizarRoteiros.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-VisualizarRoteiros.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\08 - Roteiros\08.01 - Visualizar roteiros\02-AberturaTelaRoteiros.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>02-AberturaTelaRoteiros.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\08 - Roteiros\08.03 - Filtros de roteiro\01-ValidarPesquisaRoteiro1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-ValidarPesquisaRoteiro.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\08 - Roteiros\08.04 - Espelho de gravação\01-AtualizarValidarCenas1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-AtualizarValidarCenas.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\SGROT\08 - Roteiros\08.05 - Frequência de elenco\01-FrequenciaElenco1.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>01-FrequenciaElenco.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Login.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Hooks\FeatureHook.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\GROT\01 - Bloco 01\01.01 - Cenários incompatíveis\01.01 - CenariosIncompSteps.cs" />
+    <Compile Include="Steps\GROT\01 - Bloco 01\01.02 - Cenarios\01.02 - CenariosGrotSteps.cs" />
+    <Compile Include="Steps\GROT\01 - Bloco 01\01.03 - DecupagemBasicaGROT\01.03 - DecupagemBasicaGROTSteps.cs" />
+    <Compile Include="Steps\GROT\01 - Bloco 01\01.04 - DecupagemContinu\01.04 - DecupagemContinuidadeSteps.cs" />
+    <Compile Include="Steps\GROT\01 - Bloco 01\01.07 - IndispElenco\01.07 - IndisponibilidadeElencoSteps.cs" />
+    <Compile Include="Steps\GROT\01 - Bloco 01\01.08 - IndisponibLocais\01.08 - IndisponibLocaisSteps.cs" />
+    <Compile Include="Steps\GROT\01 - Bloco 01\01.09 - LocalGravacao\01.09 - LocalGravacaoSteps.cs" />
+    <Compile Include="Steps\GROT\01 - Bloco 01\01.10 - Personagem\01.10 - PersonagemGROTSteps.cs" />
+    <Compile Include="Steps\GROT\01 - Bloco 01\01.11 - SequeciaCenica\01.11 - SequeciaCenicaSteps.cs" />
+    <Compile Include="Steps\GROT\02 - Bloco 02\01 - GrupoDeGravacao\01 - GrupoDeGravacaoSteps.cs" />
+    <Compile Include="Steps\GROT\02 - Bloco 02\02 - Parâmetros\02 - ParametrosSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\01 - Gestão de alertas\01.01 - ListagemDeAlertasSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\02 - Indicadores do produto\02.01 - Listar indicadores do produto\IndicadoresProdutoSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\03 - Planejamento\03.04 - Alertas\01-VisualizacoesAlertasSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\03 - Planejamento\03.05 - DetalhamentoDeAlertasSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\03 - Planejamento\03.07 - OcultarListagemCenasSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\03 - Planejamento\03.08 - RelatorioAlertasSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\03 - Planejamento\03.09 - NovosItensDeCenaSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\03 - Planejamento\03.10 - IconeDeInformacoesSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\03 - Planejamento\03.11 - Acionamento novas telas\AcionamentoNovasTelasSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\03 - Planejamento\03.12 - DestaqueNoDiaDaFrenteSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\03 - Planejamento\03.14 - Mudança visual\MudancaVisualSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\04 - Relatório dos indicadores de cenas\04.01 - Gerar Relatorio\04.01 - GerarRelSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\04 - Relatório dos indicadores de cenas\04.02 - Aplicar filtro\04.02 - AplicarFiltroSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\05 - Frente de gravação\05.01 - Criação de nova frente de gravação\CriacaoNovaFrenteGravacaoSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\05 - Frente de gravação\05.02 - Carregamento das frentes padrão\CarregamentoDasFrentesPadraoSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\05 - Frente de gravação\05.03 - CarregaDadosParametrizadosSteps.cs" />
+    <Compile Include="Steps\GROT\03 - Bloco 03\05 - Frente de gravação\05.04 - AlteracaoExclusaoDeFrenteSteps.cs" />
+    <Compile Include="Steps\HomeSteps.cs" />
+    <Compile Include="Steps\LoginSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\01-CriarNovoCapituloSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\02-CriarCapituloComDecupagemSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\03-EditarCapituloSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\04-IncluirAdendoSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\05-ExcluirCenaDoCapituloSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\06-CopiarCapituloSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\07-MovimentarCenaSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\08-ValidarMapaCenasSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\11-CortarCenaSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\12-ValidarImpressaoSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.03 - Decupagem basica\01-CriarDecupagemBasicaSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.04 - Decupagem arte\01-CriarDecupagemArteSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.05 - Decupagem continuidade\01-CriarDecupagemContinuidadeSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.06 - Filtros\01-ValidarPesquisasSteps.cs" />
+    <Compile Include="Steps\SGROT\03 - Capítulos e cenas\03.06 - Filtros\02-LimparPesquisasSteps.cs" />
+    <Compile Include="Steps\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\01-CriarCenarioSteps.cs" />
+    <Compile Include="Steps\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\02-EditarCenarioSteps.cs" />
+    <Compile Include="Steps\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\03-ExcluirCenarioSteps.cs" />
+    <Compile Include="Steps\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\04-CriarMateriaisFixosSteps.cs" />
+    <Compile Include="Steps\SGROT\04 - Cenários\04.02 - Criação, alteração e exclusão de ambientes do cenário\01-EditarAmbienteSteps.cs" />
+    <Compile Include="Steps\SGROT\04 - Cenários\04.02 - Criação, alteração e exclusão de ambientes do cenário\02-ExcluirAmbienteSteps.cs" />
+    <Compile Include="Steps\SGROT\04 - Cenários\04.03 - Filtros de cenários\05-FiltrosCenariosSteps.cs" />
+    <Compile Include="Steps\SGROT\05 - Personagem\05.01 - CRUD de personagem e indisponibilidade do ator\01-CriarPersonagemSteps.cs" />
+    <Compile Include="Steps\SGROT\05 - Personagem\05.01 - CRUD de personagem e indisponibilidade do ator\02-EditarNovoPersonagemSteps.cs" />
+    <Compile Include="Steps\SGROT\05 - Personagem\05.01 - CRUD de personagem e indisponibilidade do ator\03-VisualizarContatoAtorSteps.cs" />
+    <Compile Include="Steps\SGROT\05 - Personagem\05.01 - CRUD de personagem e indisponibilidade do ator\04-CadastrarNovaIndispSteps.cs" />
+    <Compile Include="Steps\SGROT\05 - Personagem\05.01 - CRUD de personagem e indisponibilidade do ator\05-EditarNovaIndispSteps.cs" />
+    <Compile Include="Steps\SGROT\05 - Personagem\05.01 - CRUD de personagem e indisponibilidade do ator\06-ExcluirPersoIndispSteps.cs" />
+    <Compile Include="Steps\SGROT\05 - Personagem\05.01 - CRUD de personagem e indisponibilidade do ator\07-ReaproveitarPersonagensSteps.cs" />
+    <Compile Include="Steps\SGROT\05 - Personagem\05.01 - CRUD de personagem e indisponibilidade do ator\08-CadastrarFichaContiSteps.cs" />
+    <Compile Include="Steps\SGROT\05 - Personagem\05.01 - CRUD de personagem e indisponibilidade do ator\09-ExcluirRoupasSteps.cs" />
+    <Compile Include="Steps\SGROT\05 - Personagem\05.02 - Validar personagem\01-ValidarPesquisaPersonagemSteps.cs" />
+    <Compile Include="Steps\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\01-IncluirNovaImagemSteps.cs" />
+    <Compile Include="Steps\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\02-AlterarInformacoesImagemSteps.cs" />
+    <Compile Include="Steps\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\03-ExcluirImagemViaDetalhamentoSteps.cs" />
+    <Compile Include="Steps\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\04-BaixarImagemSteps.cs" />
+    <Compile Include="Steps\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\05-GerarAlbumSteps.cs" />
+    <Compile Include="Steps\SGROT\06 - Fotos\06.02 - Filtros de imagem\01-ValidarPesquisaSteps.cs" />
+    <Compile Include="Steps\SGROT\06 - Fotos\06.03 - Refinar marcações\01-RefinarMarcacoesSteps.cs" />
+    <Compile Include="Steps\SGROT\07 - Planejamento de roteiro\07.01 - Configurações\01-ConfiguracoesSteps.cs" />
+    <Compile Include="Steps\SGROT\07 - Planejamento de roteiro\07.01 - Configurações\02-ExcluirGrupoNotificacaoSteps.cs" />
+    <Compile Include="Steps\SGROT\07 - Planejamento de roteiro\07.02 - Planejamento\01-CriarPlanejamentoRoteiroSteps.cs" />
+    <Compile Include="Steps\SGROT\07 - Planejamento de roteiro\07.02 - Planejamento\02-CancelarPlanejamentoSteps.cs" />
+    <Compile Include="Steps\SGROT\07 - Planejamento de roteiro\07.02 - Planejamento\03-MoverRoteiroSteps.cs" />
+    <Compile Include="Steps\SGROT\07 - Planejamento de roteiro\07.03 - Gerar relatorio\01-GeraRelatStep.cs" />
+    <Compile Include="Steps\SGROT\07 - Planejamento de roteiro\07.04 - Destacar cenas\01-DestacarCenasSteps.cs" />
+    <Compile Include="Steps\SGROT\07 - Planejamento de roteiro\07.05 - Filtrar cenas roteirizáveis\01-FiltrarCenasRoteirizaveisSteps.cs" />
+    <Compile Include="Steps\SGROT\08 - Roteiros\08.01 - Visualização roteiro\01-VisualizaçãoRoteiroSteps.cs" />
+    <Compile Include="Steps\SGROT\08 - Roteiros\08.01 - Visualização roteiro\02-AbrirAtravesTelaRoteiroSteps.cs" />
+    <Compile Include="Steps\SGROT\08 - Roteiros\08.03 - Filtros de roteiro\01-ValidarPesquisaRoteiroSteps.cs" />
+    <Compile Include="Steps\SGROT\08 - Roteiros\08.04 - Espelho de gravação\01-AtualizarValidarCenasSteps.cs" />
+    <Compile Include="Steps\SGROT\08 - Roteiros\08.05 - Frequência de elenco\01-FrequenciaElencoSteps.cs" />
+    <Compile Include="Steps\ValidacoesSemGrotSteps.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Default.srprofile">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Execute.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Features\GROT\01 - Bloco 01\01.01 - Cenários incompatíveis\01.01 - CenariosIncomp.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.01 - CenariosIncomp1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\01 - Bloco 01\01.02 - CenariosGROT\01.02 - CenariosGrot.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.02 - CenariosGrot.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\01 - Bloco 01\01.03 - DecupagemBasica\01.03 - DecupagemBasicaGROT.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.03 - DecupagemBasicaGROT1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\01 - Bloco 01\01.04 - DecupagemContinu\01.04 - DecupagemContinuidade.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.04 - DecupagemContinuidade.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\01 - Bloco 01\01.07 - IndispElenco\01.07 - IndisponibilidadeElenco.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.07 - IndisponibilidadeElenco1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\01 - Bloco 01\01.08 - IndisponibLocais\01.08 - IndisponibLocais.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.08 - IndisponibLocais1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\01 - Bloco 01\01.09 - LocalGravacao\01.09 - LocalGravacao.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.09 - LocalGravacao1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\01 - Bloco 01\01.10 - Personagem\01.10 - Personagem.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.10 - Personagem.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\01 - Bloco 01\01.11 - SequeciaCenica\01.11 - SequeciaCenica.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.11 - SequeciaCenica.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\02 - Bloco 02\01 - GrupoDeGravacao\02.01 - GrupoDeGravacao.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02.01 - GrupoDeGravacao1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\02 - Bloco 02\02 - Parâmetros\02.02 - Parametros.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02.02 - Parametros1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.01 - HistoricoPlanejamento.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.01 - HistoricoPlanejamento1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.03 - CriacaoValidacaoRoteiro.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.03 - CriacaoValidacaoRoteiro1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.05 - DetalhamentoDeAlertas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.05 - DetalhamentoDeAlertas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.07 - OcultarListagemCenas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.07 - OcultarListagemCenas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\01 - Gestão de alertas\01.01 - ListagemDeAlertas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.01 - ListagemDeAlertas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\01 - Gestão de alertas\01.02 - FiltrosDeAlertas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01.02 - FiltrosDeAlertas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.08 - RelatorioAlertas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.08 - RelatorioAlertas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.09 - NovosItensDeCena.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.09 - NovosItensDeCena.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.10 - IconeDeInformacoes.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.10 - IconeDeInformacoes1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.11 - AcionamentoNovasTelas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.11 - AcionamentoNovasTelas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.06 - CriaçãoDeNovaFrenteDeGravacao.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.06 - CriaçãoDeNovaFrenteDeGravacao1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.12 - DestaqueNoDiaDaFrente.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.12 - DestaqueNoDiaDaFrente1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.14 - MudancaVisual.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.14 - MudancaVisual1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\03 - Planejamento\03.04 - VisualizacaoAlertas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03.04 - VisualizacaoAlertas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\04 - Relatório dos indicadores de cenas\04.02 - AplicarFiltroRelatorioCenas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>04.02 - AplicarFiltroRelatorioCenas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\04 - Relatório dos indicadores de cenas\04.01 - GerarRelatorioIndicadoresDeCenas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>04.01 - GerarRelatorioIndicadoresDeCenas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\05 - Frente de gravação\05.02 - CarregamentoDasFrentesPadrao.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>05.02 - CarregamentoDasFrentesPadrao1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\05 - Frente de gravação\05.01 - CriacaoNovaFrenteGravacao.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>05.01 - CriacaoNovaFrenteGravacao1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\02 - Indicadores do produto\02.01 - IndicadoresProduto.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02.01 - IndicadoresProduto1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\05 - Frente de gravação\05.03 - CarregaDadosParametrizados.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>05.03 - CarregaDadosParametrizados.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\03 - Bloco 03\05 - Frente de gravação\05.04 - AlteracaoExclusaoDeFrente.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>05.04 - AlteracaoExclusaoDeFrente.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\GROT\ValidacoesSemGrot.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ValidacoesSemGrot.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Login.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\01-CriarNovoCapitulo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-CriarNovoCapitulo1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\02-CriarCapituloComDecupagem.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02-CriarCapituloComDecupagem.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\03-EditarCapitulo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03-EditarCapitulo.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\04-IncluirAdendo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>04-IncluirAdendo.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\05-ExcluirCenaDoCapitulo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>05-ExcluirCenaDoCapitulo.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\06-CopiarCapitulo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>06-CopiarCapitulo.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\07-MovimentarCena.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>07-MovimentarCena.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\08-ValidarMapaCenas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>08-ValidarMapaCenas.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\09-CriacaoNovoCapitulo.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>09-CriacaoNovoCapitulo.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\10-CriacaoNovoCapituloDecupagem.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>10-CriacaoNovoCapituloDecupagem.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\11-CortarCena.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>11-CortarCena.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.01 - Cadastro de capitulo\12-ValidarImpressao.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>12-ValidarImpressao.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.03 - Decupagem basica\01-CriarDecupagemBasica.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-CriarDecupagemBasica1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.04 - Decupagem arte\01-CriarDecupagemArte.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-CriarDecupagemArte.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.05 - Decupagem continuidade\01-CriarDecupagemContinuidade.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-CriarDecupagemContinuidade.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.06 - Filtros de capitulos\01-ValidarPesquisas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-ValidarPesquisas.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\03 - Capítulos e cenas\03.06 - Filtros de capitulos\02-LimparPesquisas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02-LimparPesquisas.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\01-CriarNovoCenario.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-CriarNovoCenario.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\02-EditarCenario.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02-EditarCenario.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\03-ExcluirCenario.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03-ExcluirCenario.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\04 - Cenários\04.01 - Criação, alteração e exclusão de cenários\04-CriarMateriaisFixos.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>04-CriarMateriaisFixos.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\04 - Cenários\04.02 - Criação, alteração e exclusão de ambientes do cenário\01-EditarAmbiente.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-EditarAmbiente.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\04 - Cenários\04.02 - Criação, alteração e exclusão de ambientes do cenário\02-ExcluirAmbiente.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02-ExcluirAmbiente.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\04 - Cenários\04.03 - Filtros de cenários\05-FiltrosCenarios.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>05-FiltrosCenarios.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\01-CriarPersonagem.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-CriarPersonagem.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\02-EditarNovoPersonagem.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02-EditarNovoPersonagem.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\03-VisualizarContatoAtor.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03-VisualizarContatoAtor.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\04-CadNovaIndisponibi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>04-CadNovaIndisponibi1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\05-EditarNovaIndisponibi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>05-EditarNovaIndisponibi1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\06-ExcluirPersoIndisponibi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>06-ExcluirPersoIndisponibi1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\07-ReaproveitarPersonagens.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>07-ReaproveitarPersonagens.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\08-CadastrarFichaContinuidade.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>08-CadastrarFichaContinuidade.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\05 - Personagem\05.01 - Criação, edição e exclusão de personagens e indisponibilidade do ator\09-ExcluirRoupas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>09-ExcluirRoupas.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\05 - Personagem\05.02 - Validar personagem\01-ValidarPesquisaPersonagem.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-ValidarPesquisaPersonagem.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\01-IncluirNovaImagem.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-IncluirNovaImagem.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\02-AlterarInformacoesImagem.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02-AlterarInformacoesImagem.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\03-ExcluirImagemViaDetalhamento.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03-ExcluirImagemViaDetalhamento.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\04-BaixarImagem.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>04-BaixarImagem.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\06 - Fotos\06.01 - Inclusão e manipulação de imagens\05-GerarAlbum.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>05-GerarAlbum.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\06 - Fotos\06.02 - Filtros de imagem\01-ValidarPesquisa.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-ValidarPesquisa.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\06 - Fotos\06.03 - Refinar marcações\01-RefirnarMarcacoes.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-RefirnarMarcacoes1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\07 - Planejamento de roteiro\07.01 - Configurações\01-Configuracoes.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-Configuracoes1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\07 - Planejamento de roteiro\07.01 - Configurações\02-ExcluirGrupoNotificacao.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02-ExcluirGrupoNotificacao1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\07 - Planejamento de roteiro\07.02 - Planejamento\01-CriarPlanejamentoRoteiro.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-CriarPlanejamentoRoteiro1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\07 - Planejamento de roteiro\07.02 - Planejamento\02-CancelarPlanejamento.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02-CancelarPlanejamento1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\07 - Planejamento de roteiro\07.02 - Planejamento\03-MoverRoteiro.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>03-MoverRoteiro1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\07 - Planejamento de roteiro\07.03 - Geração de relatório\01-GeraRelat.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-GeraRelat1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\07 - Planejamento de roteiro\07.04 - Destacar cenas\01-DestacarCenas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-DestacarCenas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\07 - Planejamento de roteiro\07.05 - Filtros de cenas roteirizáveis\01-FiltroCenas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-FiltroCenas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\08 - Roteiros\08.01 - Visualizar roteiros\01-VisualizarRoteiros.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-VisualizarRoteiros.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\08 - Roteiros\08.01 - Visualizar roteiros\02-AberturaTelaRoteiros.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>02-AberturaTelaRoteiros.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\08 - Roteiros\08.03 - Filtros de roteiro\01-ValidarPesquisaRoteiro.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-ValidarPesquisaRoteiro1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\08 - Roteiros\08.04 - Espelho de gravação\01-AtualizarValidarCenas.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-AtualizarValidarCenas1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\SGROT\08 - Roteiros\08.05 - Frequência de elenco\01-FrequenciaElenco.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>01-FrequenciaElenco1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="chromedriver.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="geckodriver.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IEDriverServer.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\SpecRun.Server.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\TechTalk.SpecRun.Server.Service.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\SpecRun.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\SpecRunTestProfile.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\SpecRunTestProfile_2011_09.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="runtests.cmd">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SpecRunTestProfile.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SpecRunTestProfile_2011_09.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Steps\GROT\03 - Bloco 03\01 - Gestão de alertas\01.02 - FiltrosDeAlertasSteps.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.SGP\Project.SGP.csproj">
+      <Project>{f10f42a4-8756-4f67-966e-a256a28f5458}</Project>
+      <Name>Project.SGP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SpecRun\Microsoft.Data.Services.Client.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\Microsoft.Web.Publishing.Tasks.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\NConsoler.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\RazorEngine.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\RestSharp.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Castle.Core.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Castle.Windsor.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\EntityFramework.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Microsoft.ApplicationServer.Common.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Microsoft.ApplicationServer.Http.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Microsoft.ApplicationServer.HttpEnhancements.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Microsoft.ApplicationServer.Serialization.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Microsoft.ApplicationServer.ServiceModel.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Microsoft.Net.Http.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Microsoft.QueryComposition.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Microsoft.Runtime.Serialization.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Microsoft.ServiceModel.Web.jQuery.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\NConsoler.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Ncqrs.CommandService.Contracts.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Ncqrs.CommandService.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Ncqrs.Config.Windsor.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Ncqrs.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Ncqrs.EventBus.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Ncqrs.Eventing.Sourcing.Snapshotting.DynamicSnapshot.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\NLog.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\SpecRun.Server.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\TechTalk.SpecRun.Server.Commands.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\TechTalk.SpecRun.Server.Model.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\server\TechTalk.SpecRun.Server.Service.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\SpecRun.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\System.Web.Razor.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Executor.anycpu.clr20.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Executor.anycpu.clr40.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Executor.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Executor.x86.clr20.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Executor.x86.clr40.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Interfaces.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Framework.Utils.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Server.CommandClient.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Server.Commands.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.Server.ReadModelClient.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SpecRun\TechTalk.SpecRun.VisualStudio.TestAdapter.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
